@@ -2,28 +2,28 @@ class User:
 
     def __init__(self, name, city, email, post_code, country, users=list()):#Создание class User с его аргументами
         self.users = users
-        self.name = name
-        self.city = city
-        self.email = email
-        self.post_code = post_code
-        self.country = country
+        self.__name = name
+        self.__city = city
+        self.__email = email
+        self.__post_code = post_code
+        self.__country = country
 
-    def addUserInArray(self): #Метод class User который добавляет пользователя в временный лист mas и потом добавляет его в главный лист users
+    def _addUserInArray(self): #Метод class User который добавляет пользователя в временный лист mas и потом добавляет его в главный лист users
         mas = list()
-        mas.append(self.name)
-        mas.append(self.city)
-        mas.append(self.email)
-        mas.append(self.post_code)
-        mas.append(self.country)
+        mas.append(self.__name)
+        mas.append(self.__city)
+        mas.append(self.__email)
+        mas.append(self.__post_code)
+        mas.append(self.__country)
         self.users.append(mas)
-        print("\n User {} added".format(self.name))
+        print("\n User {} added".format(self.__name))
 
     def findUser(self, name): #Метод class User который ищет пользователя по name (Дополнительный метод который нигде не вызывается,но я его добавил)
         for i in self.users.__iter__():
             if name == i[0]:
                 print(i)
 
-    def removeUser(self, name): #Метод class User который удаляет пользователя принимает параметр name (Имя пользователя)
+    def _removeUser(self, name): #Метод class User который удаляет пользователя принимает параметр name (Имя пользователя)
         for i in self.users.__iter__():
             if name == i[0]:
                 self.users.remove(i)

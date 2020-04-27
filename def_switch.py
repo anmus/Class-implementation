@@ -8,6 +8,7 @@ c = AutoRepairShop('', '', '', '', '')
 m = Meeting('','', u.users, '', c.cars)
 
 
+
 def quit(): #Функцию выходит из программы
     print("Thanks for testing my program")
     exit(0)
@@ -15,10 +16,10 @@ def quit(): #Функцию выходит из программы
 def adduser():  #Функцию добавление пользователя
     u = User(input(' Enter name: '), input(' Enter email: '), input(' Enter city: '), input(' Enter postal code: '),
              input(' Enter country: '))
-    u.addUserInArray()
+    u._addUserInArray()
 
 def removeuser(): #Функцию удаление пользователя
-   u.removeUser(input(' Enter name for delete: '))
+   u._removeUser(input(' Enter name for delete: '))
 
 def User_Conclusion(): #Функцию вывода всех пользователей
     u.Print()
@@ -27,10 +28,10 @@ def Addingaworkshop(): #Функцию добавления автомастер
     c = AutoRepairShop(input(' Enter company name: '), input(' Enter car mark: '), input(' Enter city: '),
                        input(' Enter postal code: '),
                        input(' Enter country: '))
-    c.addCarInArray()
+    c._addCarInArray()
 
 def Carworkshopremoval(): #Функцию удаления автомастерской
-    c.removeCar(input(' Enter company name for delete: '))
+    c._removeCar(input(' Enter company name for delete: '))
 
 def Conclusion_of_auto_repair_shops(): #Функцию вывода всех автомастерских
     c.PrintCar()
@@ -39,14 +40,14 @@ def Searchastomaster_workshops_by_city(): #Функцию поиска авст�
     c.findCar(input(' Enter city for find all autorepairshop: '))
 
 def car_workshop_meeting(): #Функцию создания встречи
-    m.AddMeetingInArray(input(' Enter username: '),input(' User Car model: '),input(' Enter company name: '),
+    m._AddMeetingInArray(input(' Enter username: '),input(' User Car model: '),input(' Enter company name: '),
                         time=input(' Enter date for meeting: '))
 
 def Delete_appointment(): #Функцию удаление встречи
-    m.removeMeeting(input(' Enter date for remove meeting: '))
+    m._removeMeeting(input(' Enter date for remove meeting: '))
 
 def change_meeting_time(): #Функцию изменение времени для встречи
-    m.ChangeTimeMeeting(input(" Enter the name (User): "), input(" Enter a new meeting time:"))
+    m._ChangeTimeMeeting(input(" Enter the name (User): "), input(" Enter a new meeting time:"))
 
 def conclusion_meetings():
     m.PrintMeeting()
